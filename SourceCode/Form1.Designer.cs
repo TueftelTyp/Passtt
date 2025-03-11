@@ -50,6 +50,8 @@
             // chkUppercase
             // 
             this.chkUppercase.AutoSize = true;
+            this.chkUppercase.Checked = true;
+            this.chkUppercase.CheckState = System.Windows.Forms.CheckState.Checked;
             this.chkUppercase.Location = new System.Drawing.Point(113, 17);
             this.chkUppercase.Name = "chkUppercase";
             this.chkUppercase.Size = new System.Drawing.Size(47, 17);
@@ -60,6 +62,8 @@
             // chkLowercase
             // 
             this.chkLowercase.AutoSize = true;
+            this.chkLowercase.Checked = true;
+            this.chkLowercase.CheckState = System.Windows.Forms.CheckState.Checked;
             this.chkLowercase.Location = new System.Drawing.Point(166, 17);
             this.chkLowercase.Name = "chkLowercase";
             this.chkLowercase.Size = new System.Drawing.Size(44, 17);
@@ -70,6 +74,8 @@
             // chkNumbers
             // 
             this.chkNumbers.AutoSize = true;
+            this.chkNumbers.Checked = true;
+            this.chkNumbers.CheckState = System.Windows.Forms.CheckState.Checked;
             this.chkNumbers.Location = new System.Drawing.Point(216, 18);
             this.chkNumbers.Name = "chkNumbers";
             this.chkNumbers.Size = new System.Drawing.Size(44, 17);
@@ -80,6 +86,8 @@
             // chkSpecialChars
             // 
             this.chkSpecialChars.AutoSize = true;
+            this.chkSpecialChars.Checked = true;
+            this.chkSpecialChars.CheckState = System.Windows.Forms.CheckState.Checked;
             this.chkSpecialChars.Location = new System.Drawing.Point(266, 18);
             this.chkSpecialChars.Name = "chkSpecialChars";
             this.chkSpecialChars.Size = new System.Drawing.Size(45, 17);
@@ -166,11 +174,12 @@
             this.lstPasswords.ItemHeight = 23;
             this.lstPasswords.Location = new System.Drawing.Point(10, 85);
             this.lstPasswords.Name = "lstPasswords";
-            this.lstPasswords.Size = new System.Drawing.Size(361, 303);
+            this.lstPasswords.Size = new System.Drawing.Size(361, 234);
             this.lstPasswords.TabIndex = 12;
             this.lstPasswords.TabStop = false;
             this.toolTip1.SetToolTip(this.lstPasswords, "Copied !");
             this.lstPasswords.Click += new System.EventHandler(this.lstPasswords_Click);
+            this.lstPasswords.DoubleClick += new System.EventHandler(this.lstPasswords_Click);
             // 
             // btnGenerate
             // 
@@ -181,11 +190,6 @@
             this.btnGenerate.Text = "Generate";
             this.btnGenerate.UseVisualStyleBackColor = true;
             this.btnGenerate.Click += new System.EventHandler(this.btnGenerate_Click);
-            // 
-            // toolTip1
-            // 
-            this.toolTip1.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info;
-            this.toolTip1.ToolTipTitle = "Copied!";
             // 
             // urlLabel
             // 
@@ -204,7 +208,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(382, 398);
+            this.ClientSize = new System.Drawing.Size(382, 329);
             this.Controls.Add(this.urlLabel);
             this.Controls.Add(this.btnGenerate);
             this.Controls.Add(this.lstPasswords);

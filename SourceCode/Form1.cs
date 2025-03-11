@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Drawing;
 using System.Reflection;
 using System.Text;
 using System.Windows.Forms;
@@ -13,6 +14,10 @@ namespace PassGen
         public PassForm()
         {
             InitializeComponent();
+            toolTip1.RemoveAll();
+            toolTip1.ShowAlways = false;
+            this.AcceptButton = btnGenerate;
+
         }
 
         private void btnGenerate_Click(object sender, EventArgs e)
@@ -57,8 +62,20 @@ namespace PassGen
             if (lstPasswords.SelectedItem != null) {
                 string selectedItem = lstPasswords.SelectedItem.ToString();
                 Clipboard.SetText(selectedItem);
-                toolTip1.SetToolTip(lstPasswords, lstPasswords.SelectedItem + "");
+                ShowCopiedTooltip(selectedItem);
             }
+        }
+
+        private void ShowCopiedTooltip(string copiedText)
+        {
+            Point cursorPosition = this.PointToClient(Cursor.Position);
+            int offsetX = 30;
+            int offsetY = 30;
+
+            toolTip1.ToolTipIcon = ToolTipIcon.Info;
+            toolTip1.ToolTipTitle = "Copied!";
+            toolTip1.Show(copiedText, this, cursorPosition.X + offsetX, cursorPosition.Y + offsetY, 3000);
+            lstPasswords.SelectedItem = null;
         }
 
         private void urlLabel_Click(object sender, EventArgs e)
